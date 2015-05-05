@@ -1,0 +1,338 @@
+PROJECT TITLE: Animal Game
+PURPOSE OF PROJECT: Create a game tree
+VERSION or DATE: 04/25/14
+HOW TO START THIS PROJECT:
+AUTHORS: Omair Alam
+USER INSTRUCTIONS:
+
+------------------------------------------------------------------------
+Test will check whether a balanced tree is correctly being built or not.
+Initial game configuration file: tennis-players.txt
+File content: 
+15
+Do you like tennis?
+7
+Do you like Male Players?
+3
+Do you like single handed backhands?
+1
+Do you like Federer
+0
+Do you like Wawrinka
+2
+Do you like Double Handed backhands?
+5
+Do you like Nadal?
+4
+DO you like Djokovic?
+6
+Do you like Female Players
+11
+Do you like speed?
+10
+Do you like Katie?
+8
+Do you like Mauresmo?
+9
+Do you like Power?
+12
+Do you like Sharapova?
+13
+Do you like Anna?
+14
+
+Load program with this game file 
+Test the left sub tree
+1st question:  Do you like tennis? Input:  yes
+2nd question: Do you like male players? Input: yes
+3rd question: Do you like single handed backhands? Input: yes
+4th question: Do you like Federer?  Input: yes
+Output: I thought so! Want to play again? (Yes or no)
+In my tree, I entered yes 3 times and reached a leaf after which when I said yes, the game ended because the leaf has no children. So the left most node has been correctly
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis?  Input: yes 
+2nd question: Do you like Male players? Input: yes
+3rd question: Do you like Single handed Backhands?  Input: no
+4th question: Do you like Wawrinka?  Input: yes
+Output: I thought so! Want to play again? (Yes or no)
+In my tree, I entered yes 2 times and then entered a no to go to the right sub tree and then entered a yes and I got to another leaf.  So this section seems to be built correctly as well.
+
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis?  Input: yes
+2nd question: Do you like male players?  Input: no
+3rd question: Do you like double handed backhands?  Input: yes
+4th question: Do you like Nadal?  Input: yes 
+Output: I thought so! Want to play again? (Yes or no)
+I entered yes, no, yes to get to another leaf and then pressing yes confirmed that the selection was correct and that there was no other node left 
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis?  Input: yes
+2nd question: Do you like male players? Input: no
+3rd question: Do you like double handed backhands?  Input: no
+4th question: Do you like Djokovic?  Input: yes 
+Output: I thought so! Want to play again? (Yes or no)
+I entered yes, no, no to get to another leaf and then pressing yes confirmed that the selection was correct and there was no other node left.
+
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis?  Input: yes
+2nd question: Do you like male players? Input: no
+3rd question: Do you like double handed backhands?  Input: no
+4th question: Do you like Djokovic? Input: yes 
+Output: I thought so! Want to play again? (Yes or no)
+I entered yes, no, no to get to another leaf and then pressing yes confirmed that the selection was correct and there was no other node left. 
+We have successfully checked the whole left sub tree of the root and it is constructed perfectly fine.
+Now we will test the right sub tree
+1st question: Do you like tennis?  Input: no
+2nd question: Do you like female players? Input: yes
+3rd question: Do you like speed?  Input: yes
+4th question: Do you like Katy? Input: yes
+Output: I thought so! Want to play again? (Yes or no)
+I entered no, yes, yes to get to another leaf and then pressing yes confirmed that the selection was correct and there was no other node left.  We have successfully checked the left most node of the right tree.
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis? Input: no
+2nd question: Do you like female players?  Input: no
+3rd question: Do you like speed? Input: no
+4th question: Do you like Mauresmo? Input: yes
+Output: I thought so! Want to play again? (Yes or no)
+I entered no, no, yes to get to another leaf and then pressing yes confirmed that the selection was correct and there was no other node left.  We have successfully checked the second to left most node of the right tree.
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis?  Input: no
+2nd question: Do you like female players? Input: yes
+3rd question: Do you like power? Input: yes
+Do you like Sharapova?  Input: yes
+Output: I thought so! Want to play again? (Yes or no)
+I entered no, yes, yes to get to another leaf and then pressing yes confirmed that the selection was correct and there was no other node left.  We have successfully checked the second to left most node of the right tree. So the second to last node is also in the correct position. 
+
+Input: yes (meaning I want to play again)
+1st question: Do you like tennis? Input: no
+2nd question: Do you like female players?  Input: no
+3rd question: Do you like power? Input: no
+ 4th question: Do you like Anna? Input: yes 
+Output: I thought so! Want to play again? (Yes or no)
+ In my tree, I entered no 3 times and reached a leaf after which when I said yes, the game ended because the leaf has no children.  So the right most nodes have been built correctly
+By this test case we have successfully tested all the leaf nodes of a balanced tree and the tree seems to be in the correct order.
+
+Test 2 will check whether a non-balanced tree is building correctly or not 
+Initial game configuration file: new-animals.txt
+Content of File:
+9
+Bald Eagle?
+2
+Show Egrey?
+1
+Northern Cardinal?
+4
+Does it like Nuts?
+5
+Eastern Towhee?
+0
+Green Heron?
+7
+Yellow Warbler?
+6
+Blue Grosbeak?
+8
+
+
+
+Test the left sub tree
+1st question: Bald Eagle? Input: yes
+2nd question: Snowy Egret? Input: yes
+3rd question:Northern Cardinal? Input: yes
+Output: I thought so! Want to play again? (Yes or no) 
+This checks the leftmost node. I enter yes 2 times and reach the left most node and then entering yes again gives me the output expected when I reach a node. 
+Input: yes (meaning I want to play again)
+1st question: bald Eagle? Input: yes
+2nd question: Snowy Egret? Input: no
+3rd question: Does it like nuts? Input no
+4th question: Is it an Eastern Towhee? Input yes
+Output: I thought so! Want to play again? (Yes or no) 
+This checks the second to leftmost node in the tree.
+Input: yes (meaning I want to play again)
+1st question: Bald Eagle? Input: yes
+2nd question: Snowy Egrey? Input: no
+3rd question: Does it like nuts? Input:yes
+4th question: Is it a raccoon? Input yes
+Output: I thought so! Want to play again? (Yes or no) 
+This checks the third to leftmost node in the tree.
+The left sub tree is in the correct order 
+Test the right sub tree
+1st question: Bald Eagle? Input: no
+2nd question: Green Heron? Input: yes
+3rd question: Yellow Warbler? Input yes 
+Output: I thought so! Want to play again? (Yes or no) 
+This checks the leftmost node of the right subtree
+Input: yes (meaning I want to play again)
+1st question: bald eagle? Input: no
+2nd question: Green Heron? Input: no
+3rd question: Blue Grosbeak? Input: yes
+Output: I thought so! Want to play again? (Yes or no) 
+This checks the rightmost node of the right sub-tree
+The right sub tree is in the correct order 
+
+Test will check whether modifications are being done correctly or not
+Test in a level between the second and the last (non-inclusive) 
+Initial game configuration: new-animals.txt
+7
+Bald eagle
+3
+Snow Egrey
+1
+Northern Cardinal 
+0
+Eastern Towhee
+2
+Green Heron
+5
+Yellow Warbler
+4
+Blue Grosbeak
+6
+
+I want to see whether adding and saving to a file works or not. 
+RUN PROGRAM
+1st question: bald eagle? Input: yes
+2nd question: snowy egrey? Input: no
+3rd question: Eastern Towhee? Input: no
+4th question: What is your animal? Input: baboon
+5th question: Type a y/n question to distinguish between my guess and your animal? Input: Does it have fur?
+6th question: What is the answer for your animal? Input: yes 
+7th question: Thanks! Want to play again? Input: no
+A popup box opens which lets me choose where I want to save this new configuration and I save it in new-animals2.txt
+RUN PROGRAM with new-animals2.txt
+1st question: bald eagle? Input: yes
+2nd question: Snowy Egrey? Input: no
+3rd question: Does it have fur? Input: yes
+4th question: Is it a baboon? Input yes
+5th question: Thanks! Want to play again? Input yes
+Baboon has been inserted in the correct position in the binary tree as seen in this example
+
+RUN PROGRAM AGAIN TO SEE NO for ‘does it have fur’ 
+1st question: bald eagle? Input: yes
+2nd question: Snowy Egrey? Input: no
+3rd question: Does it have fur? Input: no
+4th question: Eastern Towhee? Input yes
+5th question: Thanks! Want to play again? Input yes
+Eastern Towhee has also been inserted in the correct position in the binary tree as seen In this example.
+New modified file content is: 
+9
+Bald eagle
+5
+Snow Egrey
+1
+Northern Cardinal 
+0
+does it have fur?
+3
+Is your animal a(n) baboon?
+2
+Eastern Towhee
+4
+Green Heron
+7
+Yellow Warbler
+6
+Blue Grosbeak
+8
+
+This content shows that ‘does it have fur’ and ‘is your animal a(n) baboon’ has been added as per our changes of the game tree.
+Test game tree configuration for left most nodes
+Initial game configuration: new-animals2.txt
+9
+Bald eagle
+5
+Snow Egrey
+1
+Northern Cardinal 
+0
+does it have fur?
+3
+Is your animal a(n) baboon?
+2
+Eastern Towhee
+4
+Green Heron
+7
+Yellow Warbler
+6
+Blue Grosbeak
+8
+
+
+I want to see whether adding and saving to a file works or not if we are adding at the left most nodes works 
+1st question: bald eagle? Input: yes
+2nd question: Snow Egrey? Input: yes
+3rd question: Northern Cardinal? Input: no
+4th question: What is your animal? Input: Unicorn
+5th question: Type a y/n question to distinguish between my guess and your animal? Input: Does it fly?
+6th question: What is the answer for your animal? Input: yes 
+7th question: Thanks! Want to play again? Input: no
+A popup box opens which lets me choose where I want to save this new configuration in new-animals0.txt
+RUN THE PROGRAM with new-animals0.txt
+1st question: bald eagle? Input: yes
+2nd question: Snow Egrey? Input: yes
+3rd Question: Does it fly? Input: yes
+4th Question: Is your animal a(n) unicorn?  Input: yes
+5th question: Thanks! Want to play again? Input: no
+We can see that unicorn as well as the question for unicorn has been placed in the right spot. 
+RUN THE PROGRAM with new-animals0.txt again to check no for ‘does it fly’
+1st question: bald eagle? Input: yes
+2nd question: Snow Egrey? Input: yes
+3rd Question: Does it fly? Input: no
+4th Question Northern Cardinal?  Input: yes
+5th question: Thanks! Want to play again? Input: no
+We can see that Northern Cardinal is also in the correct position. 
+
+ Test game tree configuration for right most nodes
+Initial game tree configuration: new-animals2.txt
+11
+Bald eagle
+7
+Snow Egrey
+3
+Does it fly?
+1
+Is your animal a(n) Unicorn?
+0
+Northern Cardinal 
+2
+does it have fur?
+5
+Is your animal a(n) baboon?
+4
+Eastern Towhee
+6
+Green Heron
+9
+Yellow Warbler
+8
+Blue Grosbeak
+10
+
+I want to test whether adding at the right-most nodes of the tree works 
+1st question: Bald Eagle? Input: no
+2nd question: Green Heron? Input: no
+3rd question: Blue Grosbeak? Input: no
+4th question: What is your animal? Input: cheetah
+5th question: Type a y/n question to distinguish between my guess and your animal? Input: Does it run really slow?
+6th question: What is the answer for your animal? Input: no
+7th question: Thanks! Want to play again? Input: no
+A popup box opens which lets me choose where I want to save this new configuration and I save it in new-animals4.txt
+RUN PROGRAM WITH new-animals4.txt
+1st question: Bald Eagle? Input: no
+2nd question: Green Heron? Input: no
+3rd question: Does it run really slow? Input: no
+4th question: is your animal a(n) Cheetah? Input: yes
+7th question: Thanks! Want to play again? Input: no
+
+We therefore see that cheetah and the question for cheetah was successfully added at the right most node of the tree. 
+RUN PROGRAM WITH new-animals4.txt to test for yes at ‘does it run really slow’ 
+1st question: Bald Eagle? Input: no
+2nd question: Green Heron? Input: no
+3rd question: Does it run really slow? Input: yes
+4th question: Blue Grosbeak? Input: yes
+7th question: Thanks! Want to play again? Input: no
+We therefore see that blue grosbeak was successfully added at the right most node of the tree. 
+
+
+------------------------------------------------------------------------
+

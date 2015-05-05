@@ -1,0 +1,27 @@
+13
+Bald eagle
+7
+Snow Egrey
+3
+Does it fly?
+1
+Is your animal a(n) Unicorn?
+0
+Northern Cardinal 
+2
+does it have fur?
+5
+Is your animal a(n) baboon?
+4
+Eastern Towhee
+6
+Green Heron
+9
+Yellow Warbler
+8
+Does it run really slow?
+11
+Blue Grosbeak
+10
+Is your animal a(n) Cheetah?
+12

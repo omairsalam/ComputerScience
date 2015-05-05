@@ -1,0 +1,31 @@
+15
+Do you like tennis?
+7
+Do you like Male Players?
+3
+Do you like single handed backhands?
+1
+Do you like Federer
+0
+Do you like Wawrinka
+2
+Do you like Double Handed backhands?
+5
+Do you like Nadal?
+4
+DO you like Djokovic?
+6
+Do you like Female Players
+11
+Do you like speed?
+10
+Do you like Katie?
+8
+Do you like Mauresmo?
+9
+Do you like Power?
+12
+Do you like Sharapova?
+13
+Do you like Anna?
+14
