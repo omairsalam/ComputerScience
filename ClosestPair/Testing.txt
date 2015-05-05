@@ -1,0 +1,41 @@
+Test 1 
+Only one point in the arrayList allPoints 
+Expected Result: An empty closestPair arraylist 
+Achieved Result: An empty cloestPair arrayList 
+Rationale: If there is only one point, there is no closest pair since the initial list only has one point so the closest pair doesn't exist. 
+
+
+Test 2
+Two points in the arrayList allPoints 
+Expected Result: closestPair is these two points 
+Achieved Result: closestPair is these two points 
+Rationale: If the arraylist only has two points, the same two are going to appear in the cloestPair by default 
+
+Test 3
+100 random points between -25 and 25 
+Fixed seed to 23173 
+Expected Result: closestPair is either two identical points or two points with the smallest distance 
+Achieved Result: closestPair was usually two identical points, but sometimes two points with the smallest distance depending on the seed.
+Rationale: This is just to check whether the method generally works for random points, and returns the closest two. Both negative and positive numbers were checked since it ranges from -25 to 25. 
+
+Test 4
+4 Sets of different points with the same distance between pairs, such as (1,1),(1,2),(2,1),(2,2). 
+Expected Result: closestPair contains one of the two points that have the smallest distance. 
+Achieved Result: closestPair contained the two points that had the smallest distance, in this case (1,1) and (1,2)
+Rationale: If we have more than one pair of points with the same distance between them, the cloestPair should contain any of the cloestPairs, if more than one. 
+
+Test 5 
+10 Random points all on the same vertical line - i.e. all on the median line. 
+Expected Results: The cloest two points on this vertical line
+Achieved Result: The closest two points on this vertical line 
+Rationale: All these points are on the mean line so it tests our ability to find the shortest distance points if all of them lie on the dividing line. 
+
+Test 6
+A case where there are 6 points, two on the left of the initial dividing line, two on the right of the initial dividing line and then two cloest distance points on the opposite side of the dividing line.
+Expected Result: The cloest two points on the opposite sides of the dividing line. 
+Rationale: If the shortest distance of points on opposite sides of the line is being calculated correctly, only then will the two points on the opposite side be considered for shortest distance. Otherwise, it will return the pair of points that are on the same side of the dividing line with a distance greater than the actual shortest distance. 
+
+
+
+
+

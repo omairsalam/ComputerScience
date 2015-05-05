@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ellen+Portia Writeup</title>
+  </head>
+  <body>
+    <h3> Team Ellen/Portia Lab Writeup</h3>
+    <p>
+          When creating our arcade game, the first step in our process was to create a timer. Our timer was programmed by creating threads Initially, we created our timer inside a specific timer class, but later the timer was added to the class controlling disc formation. We did this because we wanted to create the discs on a panel and then print the panel on the JFrame. We implemented Runnable in the JPanel class so we could use its run method to run the threads that we have. We had two JPanels, one for the normal bubbles, and another for the the bonus bubbles. Inside our main class called Ellen Portia, we create instances of both the JPanels for the normal bubbles called BubbleJPanel, and the JPanels for the bonus discs called, BonusBubblePanels. </p>
+          <p>    Inside each JPanel, we make the disc grow. The size of the JPanel is not fixed, instead it increases with the increase in the size of the bubble. We create an oval inside the JPanel, with the dimensions being 0,0,diameter, diameter. The 0,0 is because we want the starting coordinates of the bubble to be 0,0 with reference to the JPanel, which was confusing at first because in reference to the JFrame, the coordinates are definitely not 0,0. As we expand the size of the bubble, we have to shift the coordinates of that particular JPanel, by half of the diameter up and half of the diameter to the left. So in our case, we were incrementing the diameter by 2 every time the schedule repetition time expires. Hence, we needed to shift the coordinates of the bubble panel by xCoordinate -1, yCoordinate -1, where xCoordinate is the initial x coordinate of a bubble Panel, and yCoordinate is the initial y coordinate of the bubble panel. We did this because we wanted to keep the centres of the bubbles the same every time.</p>
+          <p>As for the timers for each bubblePanel, we were originally using a schedule, which basically executed a run method for a particular class when the timer in the schedule expired. This wasn't working because we wanted to expand the bubble on the screen, thus instead of showing the bubble with first a 10 diameter and then a 100, we wanted to show the increment in the diameter as well, that is from 10 to 12 to 14 and so on. We did this by using another schedule method in which the same run method of the class was executed again and again based on a certain time interval. </p>
+          <p>We used a streak counter to keep a record of the number of bubbles that we clicked on which were smaller than 65 in diameter. The important thing we realized about that was we had to use a static context for that because we wanted the bubble class to use the same counter and therefore modify its value every time. Therefore one streak counter is carried through the whole program. When we did not have it as static, the problem caused was that every time we created an instance of bubblePanel, the value of streak counter would be set to 0. We followed the same principle for a bubbleExploded variable which was basically a running counter of the total number of bubbles that have exploded in the whole game. We needed to use that because the formula of the lives remaining contained the variable of bubbleExploded.</p>
+          <p>    We wanted to use our scorekeeper (called score_oa6ci) class in the same context. Meaning we wanted our main class(EllenPortia), the bubblePanel class, and the bonusBubblePanel class to use the same copy of scorekeeper so instead of creating new instances of scorekeepers every time an instance of the class was created, the values of the variables in the scorekeeper class, such as the total score, points added etc would be continued and modified instead of being set to 0 every time. Creating a static instance of the scorekeeper class was complicated so we did not do that. Instead we decided to pass the scorekeeper class as a parameter of the bonusBubblePanel, and the bubblePanel. We also created a local copy of that score by saying
+
+          <pre>public Score_oa6ci m1; </pre>
+
+          then we copied the contents from the original score class (called m1) into the bubblePanel by saying,
+
+          <pre>public BubblePanel(Score_oa6ci m2) </pre>
+
+          so m2 contains the copy of the content inside the score class. Then we say,
+
+          <pre>m1 = m2; </pre>
+          this is done because the current contents of the score class are in m2, so we wanted to copy the contents of m2 into the local copy of the score class, m1. </p>
+          <p>Another important feature that we used was updating the score on the screen. We did this by using JLabel. We created an instance of JLabel as shown in our code. We set the font, the font size, the location of the label as well as the size of the label. Then we updated the contents of the label inside the for loop which was creating instances of the bubble and the bonus bubble. After creating every bubblePanel, we updated the labels by printing in them
+
+          <pre>m1.getScore(), m1.getLevel(), m1.getLives etc </pre>
+
+          For the dazzle points we did a number of important things. We used sound, images for the bubbles, images for the background, and also changed the mouse cursor. I will address these issues one after the other.</p>
+          <h4>Sound</h4>
+          <p>For sound, we had to import a .wav. We tried the code with .mp3 and that did not work properly. There was a command called, m.play() where m was the audio file. For the background music we basically imported a music file, for instance m1, and put m1.play() in the EllenPortia main so that whenever the EllenPortia class is run, the sound starts.
+          For sound in the bubbleClass we imported another audio file, for instance m2, and put m2.play() in the mousepressed for the BubblePanel class, and so whenever there would be a mouse click on a bubble, there would be a sound, the sound in our case is that of a bottle opening. </p>
+          <p>One problem that we have noticed now is that ever since we imported the sound for the mouse click as well as the sound for the background, there is a memory issue in java, one which results in an exception: &quot;Out of memory error, java heap memory.&quot;
+          This causes the program to get stuck, so at level 6 for us, varying in 6-8 the program gets stuck as there is a memory flow. We think the memory flow is caused due to the fact that, when we kill the threads, maybe the JPanels don’t get killed, instead only the threads die, and since we only hide the JPanels instead of removing them, they keep piling up, The rate of them piling up increases as the game progresses as more and more panels are produced in the same amount of time,. Thus the game does get stuck due to this problem. </p>
+          <p>It is also important to note that when we removed the sound and retested the program, the levels were going up to level 8 and we did not have a lot of performance issues. This testing of the space that java needs for the program was done when we stopped printing the output because we knew that it was taking a lot of space as well. Another thing that we originally thought was that the threads were not cancelling due to our logic of t.cancel() not being fine. We therefore looked at the activity monitor of apple to see how many threads were running and they were less than 40, which Kelsey mentioned were not enough to make the program go out of memory. I hope we do not get penalized for this error. </p>
+          <h4>Images:</h4>
+          <p>In order to make our game both more streamlined and more aesthetic, we decided to only import one background image, which would provide both the frame for the playing field, and all related outside graphics. We created this background image in photoshop, and used the theme, &quot;Poke-a-Coke&quot; as a jumping off point for our related graphics. After creating the single background image in photoshop using standard photoshop tools, we imported it into the code itself, and set the restrictions and parameters for the appearance of circles and the appearance of the jLabels to fit with organization of the background. We imported the background using a try and a catch saying that we want it to read an image called &quot;CocaCola.png&quot; which is in ou root folder. If an exception is caused by that, we call that exception IOEXxception ex and write the catch so it can catch that exception. Since we do not want any specific code to be run as a result of that catch, we don’t write anything inside the catch. It is also important to mention here that we imported alot of classes such as </p>
+
+          <pre>import java.io.File;
+
+          import java.io.IOException;
+
+          import java.util.logging.Level;
+
+          import java.util.logging.Logger;
+
+          import javax.imageio.ImageIO;</pre>
+
+          <p>For the images in the bubbles, the try and catch was basically the same, the only problem that we did encounter however was that when we originally wrote the code, the bubble image started at 10 by 10 pixels and then as it expanded to 100 by 100, the image didn’t expand wholly in size, meaning in 10 by 10 it didn’t show the whole picture but instead cropped it. We used a code for that as follows,
+
+          <pre>g.drawImage(image,0,0, diameter, diameter, null);</pre>
+
+          What this basically did is that, it changed the diameter of the picture with the change in the pixels which meant that even in a 10 by 10, the picture wasn’t being cropped, but instead it was being expanded every time. We were also very cautious towards using circular pictures because we wanted them to be ovals instead of squares. </p>
+          <p>Lastly, we also replaced the mouse cursor by a bottle opener, which from a far doesn't really look like one but nonetheless is. The opener is the picture of the mouse. We put the code for the image of the opener inside the main EllenPortia class. We had to restrict the size of the opener to 40,50 pixels because we did not want the mouse to be too big.
+
+          One problem that we have faced with the game is that if the mouse is inside the Java Frame, when the game starts, it is initially a bottle opener but only for a split second and then it becomes a normal pointed default mouse cursor. As soon as we go back into the window however meaning, if you take the mouse out of the window and back in, it becomes a bottle opener and stays like that for the whole game. We have also put a sleep thread in the same when the game ends. The sleep thread results in &quot;PORTIA HAS STORMED AWAY&quot; and it stays on the screen for 2 seconds after which the game ends. The code we have used for that is
+
+          <pre>System.exit(0); </pre>
+
+          Then the game is over, and if we run the game again, everything restarts and all the score and everything is reset. </p>
+        </body>
+      </html>

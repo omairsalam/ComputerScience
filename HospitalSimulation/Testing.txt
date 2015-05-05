@@ -1,0 +1,162 @@
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 123456
+
+Trial 1
+RunTime 
+LinkedList = 132 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 131 seconds 
+PriorityList = 8 seconds
+SkipList = 12 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 130 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 37356596
+
+Trial 1
+RunTime 
+LinkedList = 119 seconds 
+PriorityList = 8 seconds
+SkipList = 16 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 121 seconds 
+PriorityList = 8 seconds
+SkipList = 15 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 117 seconds 
+PriorityList = 8 seconds
+SkipList = 16 seconds 
+
+
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 111222
+
+Trial 1
+RunTime 
+LinkedList = 113 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 115 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 114 seconds 
+PriorityList = 8 seconds
+SkipList = 14 seconds 
+
+
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 9876543
+
+Trial 1
+RunTime 
+LinkedList = 134 seconds 
+PriorityList = 8 seconds
+SkipList = 16 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 134 seconds 
+PriorityList = 8 seconds
+SkipList = 14 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 132 seconds 
+PriorityList = 8 seconds
+SkipList = 15 seconds 
+
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 54321
+
+Trial 1
+RunTime 
+LinkedList = 110 seconds 
+PriorityList = 7 seconds
+SkipList = 12 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 112 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 111 seconds 
+PriorityList = 8 seconds
+SkipList = 15 seconds 
+
+
+--------------------------------------------------
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+Seed for Simulation Manager: 44556677
+
+Trial 1
+RunTime 
+LinkedList = 130 seconds 
+PriorityList = 8 seconds
+SkipList = 13 seconds 
+
+Trial 2
+RunTime 
+LinkedList = 132 seconds 
+PriorityList = 8 seconds
+SkipList = 12 seconds 
+
+Trial 3
+RunTime 
+LinkedList = 130 seconds 
+PriorityList = 8 seconds
+SkipList = 12 seconds 
+
+----------------------------------------------------
+Average Time for
+Environment Grid = 100x100
+Initial Agents = 5000
+Output = Off
+
+
+LinkedList = 123.2 seconds 
+PriorityList = 8 seconds
+SkipList = 13.7 seconds  
+
+
+
+
+

@@ -1,0 +1,1 @@
+Finds the closest pair of points in a set of points 
